@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F294F1D5FCA11761D4991E0 /* Pods_JSONParsePerformanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9328CFCA03EEF888D693A8A3 /* Pods_JSONParsePerformanceTests.framework */; };
+		3397CA22209D52ED00CB5CCA /* airports10000.json in Resources */ = {isa = PBXBuildFile; fileRef = 3397CA21209D52ED00CB5CCA /* airports10000.json */; };
 		33A1B965209B42D500312FB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1B964209B42D500312FB3 /* AppDelegate.swift */; };
 		33A1B967209B42D500312FB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1B966209B42D500312FB3 /* ViewController.swift */; };
 		33A1B96A209B42D500312FB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B968209B42D500312FB3 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		33A1B96F209B42D600312FB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B96D209B42D600312FB3 /* LaunchScreen.storyboard */; };
 		33A1B97A209B42D600312FB3 /* JSONParsePerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1B979209B42D600312FB3 /* JSONParsePerformanceTests.swift */; };
 		33A1B985209B42D600312FB3 /* JSONParsePerformanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1B984209B42D600312FB3 /* JSONParsePerformanceUITests.swift */; };
-		33A1B9F0209B437200312FB3 /* airports10000.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9EE209B437200312FB3 /* airports10000.json */; };
 		33A1B9F6209B439D00312FB3 /* airports10.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9F2209B439D00312FB3 /* airports10.json */; };
 		33A1B9F7209B439D00312FB3 /* airports100.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9F3209B439D00312FB3 /* airports100.json */; };
 		33A1B9F8209B439D00312FB3 /* airports1.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9F4209B439D00312FB3 /* airports1.json */; };
@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		2D4AA87861A70BDADF1AE1BD /* Pods-JSONParsePerformanceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceUITests/Pods-JSONParsePerformanceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3171A89DCEBC8C28804B7ADC /* Pods-JSONParsePerformance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformance/Pods-JSONParsePerformance.debug.xcconfig"; sourceTree = "<group>"; };
+		3397CA21209D52ED00CB5CCA /* airports10000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports10000.json; sourceTree = "<group>"; };
 		33A1B961209B42D500312FB3 /* JSONParsePerformance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONParsePerformance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A1B964209B42D500312FB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33A1B966209B42D500312FB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		33A1B980209B42D600312FB3 /* JSONParsePerformanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONParsePerformanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A1B984209B42D600312FB3 /* JSONParsePerformanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsePerformanceUITests.swift; sourceTree = "<group>"; };
 		33A1B986209B42D600312FB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33A1B9EE209B437200312FB3 /* airports10000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = airports10000.json; path = ../../../CodablePerformance/Tests/airports10000.json; sourceTree = "<group>"; };
 		33A1B9F2209B439D00312FB3 /* airports10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports10.json; sourceTree = "<group>"; };
 		33A1B9F3209B439D00312FB3 /* airports100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports100.json; sourceTree = "<group>"; };
 		33A1B9F4209B439D00312FB3 /* airports1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports1.json; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				33A1B9F2209B439D00312FB3 /* airports10.json */,
 				33A1B9F3209B439D00312FB3 /* airports100.json */,
 				33A1B9F5209B439D00312FB3 /* airports1000.json */,
-				33A1B9EE209B437200312FB3 /* airports10000.json */,
+				3397CA21209D52ED00CB5CCA /* airports10000.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -296,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3397CA22209D52ED00CB5CCA /* airports10000.json in Resources */,
 				33A1B96F209B42D600312FB3 /* LaunchScreen.storyboard in Resources */,
 				33A1B9F7209B439D00312FB3 /* airports100.json in Resources */,
 				33A1B96C209B42D600312FB3 /* Assets.xcassets in Resources */,
@@ -303,7 +304,6 @@
 				33A1B9F6209B439D00312FB3 /* airports10.json in Resources */,
 				33A1B9F8209B439D00312FB3 /* airports1.json in Resources */,
 				33A1B9F9209B439D00312FB3 /* airports1000.json in Resources */,
-				33A1B9F0209B437200312FB3 /* airports10000.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

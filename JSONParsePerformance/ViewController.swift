@@ -76,19 +76,30 @@ class ViewController: UIViewController {
         
         let data = airportsJSON(count: 10000) // 1, 10, 100, 1000, or 10000
         
-        let date0 = Date().timeIntervalSince1970
-        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-        _ = json.map{ Airport(json: $0) }
-        debugPrint("JSONSerialization:", Date().timeIntervalSince1970 - date0)
+        var interval0: TimeInterval = 0
+        var interval1: TimeInterval = 0
+        var interval2: TimeInterval = 0
         
-        let date1 = Date().timeIntervalSince1970
-        let decoder = JSONDecoder()
-        _ = try! decoder.decode([Airport].self, from: data)
-        debugPrint("JSONDecoder:", Date().timeIntervalSince1970 - date1)
+        for _ in 0...9 {
+            
+            let date0 = Date().timeIntervalSince1970
+            let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+            _ = json.map{ Airport(json: $0) }
+            interval0 += (Date().timeIntervalSince1970 - date0)
+            
+            let date1 = Date().timeIntervalSince1970
+            let decoder = JSONDecoder()
+            _ = try! decoder.decode([Airport].self, from: data)
+            interval1 += (Date().timeIntervalSince1970 - date1)
+            
+            let date2 = Date().timeIntervalSince1970
+            _ = JSONDeserializer<Handy>.deserializeModelArrayFrom(json: String(data: data, encoding: .utf8))
+            interval2 += (Date().timeIntervalSince1970 - date2)
+        }
         
-        let date2 = Date().timeIntervalSince1970
-        _ = JSONDeserializer<Handy>.deserializeModelArrayFrom(json: String(data: data, encoding: .utf8))
-        debugPrint("HandyJSON:", Date().timeIntervalSince1970 - date2)
+        debugPrint("JSONSerialization:", interval0 / 10)
+        debugPrint("JSONDecoder:", interval1 / 10)
+        debugPrint("HandyJSON:", interval2 / 10)
     }
 
     override func didReceiveMemoryWarning() {
