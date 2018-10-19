@@ -1,16 +1,20 @@
 PODS:
-  - HandyJSON (4.1.1)
+  - CleanJSON (0.2.3)
+  - HandyJSON (4.2.0)
 
 DEPENDENCIES:
+  - CleanJSON
   - HandyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - CleanJSON
     - HandyJSON
 
 SPEC CHECKSUMS:
-  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  CleanJSON: 9636c27da16f5bdc13e9ee46dffcecd9fdd093d3
+  HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
 
-PODFILE CHECKSUM: 29eea85dca41717a6355a686e7f4338cbfb9485b
+PODFILE CHECKSUM: fd842334cb85fe16246d9f6401328bfea51d1f92
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.beta.1

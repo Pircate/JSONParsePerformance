@@ -5,6 +5,7 @@ target 'JSONParsePerformance' do
   use_frameworks!
 
   pod 'HandyJSON'
+  pod 'CleanJSON'
 
   target 'JSONParsePerformanceTests' do
     inherit! :search_paths
