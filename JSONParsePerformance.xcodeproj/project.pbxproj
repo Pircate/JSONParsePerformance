@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F294F1D5FCA11761D4991E0 /* Pods_JSONParsePerformanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9328CFCA03EEF888D693A8A3 /* Pods_JSONParsePerformanceTests.framework */; };
 		3397CA22209D52ED00CB5CCA /* airports10000.json in Resources */ = {isa = PBXBuildFile; fileRef = 3397CA21209D52ED00CB5CCA /* airports10000.json */; };
 		33A1B965209B42D500312FB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1B964209B42D500312FB3 /* AppDelegate.swift */; };
 		33A1B967209B42D500312FB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A1B966209B42D500312FB3 /* ViewController.swift */; };
@@ -19,6 +18,7 @@
 		33A1B9F7209B439D00312FB3 /* airports100.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9F3209B439D00312FB3 /* airports100.json */; };
 		33A1B9F8209B439D00312FB3 /* airports1.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9F4209B439D00312FB3 /* airports1.json */; };
 		33A1B9F9209B439D00312FB3 /* airports1000.json in Resources */ = {isa = PBXBuildFile; fileRef = 33A1B9F5209B439D00312FB3 /* airports1000.json */; };
+		3A68B6456AEF8376A62745CC /* Pods_JSONParsePerformanceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9328CFCA03EEF888D693A8A3 /* Pods_JSONParsePerformanceTests.framework */; };
 		6C515640217A38DD00226975 /* airports1.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C51563B217A38DD00226975 /* airports1.json */; };
 		6C515641217A38DD00226975 /* airports10000.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C51563C217A38DD00226975 /* airports10000.json */; };
 		6C515642217A38DD00226975 /* airports10.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C51563D217A38DD00226975 /* airports10.json */; };
@@ -62,11 +62,11 @@
 		6C51563D217A38DD00226975 /* airports10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports10.json; sourceTree = "<group>"; };
 		6C51563E217A38DD00226975 /* airports100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports100.json; sourceTree = "<group>"; };
 		6C51563F217A38DD00226975 /* airports1000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports1000.json; sourceTree = "<group>"; };
+		7FFB31F2EB3D1C27E7A91793 /* Pods-JSONParsePerformanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceTests/Pods-JSONParsePerformanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		9328CFCA03EEF888D693A8A3 /* Pods_JSONParsePerformanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONParsePerformanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3FD79E38BD0D6241D97AF6F /* Pods-JSONParsePerformanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceTests/Pods-JSONParsePerformanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE7A496D6DCA3DE1D4168005 /* Pods-JSONParsePerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformance.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformance/Pods-JSONParsePerformance.release.xcconfig"; sourceTree = "<group>"; };
-		C5D667AB2C874BC613EC1131 /* Pods-JSONParsePerformanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceTests/Pods-JSONParsePerformanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA466884CAB557B952D554E8 /* Pods-JSONParsePerformanceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceUITests/Pods-JSONParsePerformanceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F3CDCCF58F2FAD7867F48AC2 /* Pods-JSONParsePerformanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceTests/Pods-JSONParsePerformanceTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F294F1D5FCA11761D4991E0 /* Pods_JSONParsePerformanceTests.framework in Frameworks */,
+				3A68B6456AEF8376A62745CC /* Pods_JSONParsePerformanceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +94,10 @@
 			children = (
 				3171A89DCEBC8C28804B7ADC /* Pods-JSONParsePerformance.debug.xcconfig */,
 				BE7A496D6DCA3DE1D4168005 /* Pods-JSONParsePerformance.release.xcconfig */,
-				B3FD79E38BD0D6241D97AF6F /* Pods-JSONParsePerformanceTests.debug.xcconfig */,
-				C5D667AB2C874BC613EC1131 /* Pods-JSONParsePerformanceTests.release.xcconfig */,
 				2D4AA87861A70BDADF1AE1BD /* Pods-JSONParsePerformanceUITests.debug.xcconfig */,
 				CA466884CAB557B952D554E8 /* Pods-JSONParsePerformanceUITests.release.xcconfig */,
+				F3CDCCF58F2FAD7867F48AC2 /* Pods-JSONParsePerformanceTests.debug.xcconfig */,
+				7FFB31F2EB3D1C27E7A91793 /* Pods-JSONParsePerformanceTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33A1B98C209B42D600312FB3 /* Build configuration list for PBXNativeTarget "JSONParsePerformanceTests" */;
 			buildPhases = (
-				BBB37608BD87EB5891565002 /* [CP] Check Pods Manifest.lock */,
+				ABC09969BA36A2DB412F0E9D /* [CP] Check Pods Manifest.lock */,
 				33A1B971209B42D600312FB3 /* Sources */,
 				33A1B972209B42D600312FB3 /* Frameworks */,
 				33A1B973209B42D600312FB3 /* Resources */,
@@ -329,16 +329,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BBB37608BD87EB5891565002 /* [CP] Check Pods Manifest.lock */ = {
+		ABC09969BA36A2DB412F0E9D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-JSONParsePerformanceTests-checkManifestLockResult.txt",
 			);
@@ -549,7 +553,7 @@
 		};
 		33A1B98D209B42D600312FB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3FD79E38BD0D6241D97AF6F /* Pods-JSONParsePerformanceTests.debug.xcconfig */;
+			baseConfigurationReference = F3CDCCF58F2FAD7867F48AC2 /* Pods-JSONParsePerformanceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,7 +574,7 @@
 		};
 		33A1B98E209B42D600312FB3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5D667AB2C874BC613EC1131 /* Pods-JSONParsePerformanceTests.release.xcconfig */;
+			baseConfigurationReference = 7FFB31F2EB3D1C27E7A91793 /* Pods-JSONParsePerformanceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

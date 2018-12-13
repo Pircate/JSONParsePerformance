@@ -12,9 +12,4 @@ target 'JSONParsePerformance' do
     # Pods for testing
   end
 
-  target 'JSONParsePerformanceUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
