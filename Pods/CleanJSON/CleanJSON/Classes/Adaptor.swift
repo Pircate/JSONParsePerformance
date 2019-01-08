@@ -6,90 +6,78 @@
 //  Copyright © 2018 Pircate. All rights reserved.
 //
 
+public typealias AdaptorType<T> = (CleanDecoder) throws -> T
+
 extension CleanJSONDecoder {
     
     public struct Adaptor {
         
-        public var decodeBool: (CleanDecoder) throws -> Bool = { _ in false }
+        public var decodeBool: AdaptorType<Bool> = { _ in Bool.defaultValue }
         
-        public var decodeInt: (CleanDecoder) throws -> Int = { decoder in
+        public var decodeInt: AdaptorType<Int> = { decoder in
             guard !decoder.decodeNull() else {
-                return 0
+                return Int.defaultValue
             }
             
-            guard let stringValue = try decoder.decode(String.self) else {
-                return 0
+            guard let stringValue = try decoder.decodeIfPresent(String.self) else {
+                return Int.defaultValue
             }
             
-            return Int(stringValue) ?? 0
+            return Int(stringValue) ?? Int.defaultValue
         }
         
-        public var decodeUInt: (CleanDecoder) throws -> UInt = { decoder in
+        public var decodeUInt: AdaptorType<UInt> = { decoder in
             guard !decoder.decodeNull() else {
-                return 0
+                return UInt.defaultValue
             }
             
-            guard let stringValue = try decoder.decode(String.self) else {
-                return 0
+            guard let stringValue = try decoder.decodeIfPresent(String.self) else {
+                return UInt.defaultValue
             }
             
-            return UInt(stringValue) ?? 0
+            return UInt(stringValue) ?? UInt.defaultValue
         }
         
-        public var decodeFloat: (CleanDecoder) throws -> Float = { decoder in
+        public var decodeFloat: AdaptorType<Float> = { decoder in
             guard !decoder.decodeNull() else {
-                return 0
+                return Float.defaultValue
             }
             
-            guard let stringValue = try decoder.decode(String.self) else {
-                return 0
+            guard let stringValue = try decoder.decodeIfPresent(String.self) else {
+                return Float.defaultValue
             }
             
-            return Float(stringValue) ?? 0
+            return Float(stringValue) ?? Float.defaultValue
         }
         
-        public var decodeDouble: (CleanDecoder) throws -> Double = { decoder in
+        public var decodeDouble: AdaptorType<Double> = { decoder in
             guard !decoder.decodeNull() else {
-                return 0
+                return Double.defaultValue
             }
             
-            guard let stringValue = try decoder.decode(String.self) else {
-                return 0
+            guard let stringValue = try decoder.decodeIfPresent(String.self) else {
+                return Double.defaultValue
             }
             
-            return Double(stringValue) ?? 0
+            return Double(stringValue) ?? Double.defaultValue
         }
         
-        public var decodeString: (CleanDecoder) throws -> String = { decoder in
+        public var decodeString: AdaptorType<String> = { decoder in
             guard !decoder.decodeNull() else {
-                return ""
+                return String.defaultValue
             }
             
-            if let intValue = try decoder.decode(Int.self) {
+            if let intValue = try decoder.decodeIfPresent(Int.self) {
                 return String(intValue)
-            } else if let doubleValue = try decoder.decode(Double.self) {
+            } else if let doubleValue = try decoder.decodeIfPresent(Double.self) {
                 return String(doubleValue)
-            } else if let boolValue = try decoder.decode(Bool.self) {
+            } else if let boolValue = try decoder.decodeIfPresent(Bool.self) {
                 return String(boolValue)
             }
             
-            return ""
+            return String.defaultValue
         }
         
         public init() {}
-        
-        public init(decodeBool: @escaping (CleanDecoder) -> Bool,
-                    decodeInt: @escaping (CleanDecoder) -> Int,
-                    decodeUInt: @escaping (CleanDecoder) -> UInt,
-                    decodeFloat: @escaping (CleanDecoder) -> Float,
-                    decodeDouble: @escaping (CleanDecoder) -> Double,
-                    decodeString: @escaping (CleanDecoder) -> String) {
-            self.decodeBool = decodeBool
-            self.decodeInt = decodeInt
-            self.decodeUInt = decodeUInt
-            self.decodeFloat = decodeFloat
-            self.decodeDouble = decodeDouble
-            self.decodeString = decodeString
-        }
     }
 }
