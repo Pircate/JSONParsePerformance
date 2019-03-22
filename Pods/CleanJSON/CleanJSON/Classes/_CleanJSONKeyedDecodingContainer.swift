@@ -2,7 +2,7 @@
 //  _CleanJSONKeyedDecodingContainer.swift
 //  CleanJSON
 //
-//  Created by Pircate(gao497868860@gmail.com) on 2018/10/10
+//  Created by Pircate(swifter.dev@gmail.com) on 2018/10/10
 //  Copyright © 2018 Pircate. All rights reserved.
 //
 
@@ -55,23 +55,6 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
         return self.container[key.stringValue] != nil
     }
     
-    private func _errorDescription(of key: CodingKey) -> String {
-//        switch decoder.options.keyDecodingStrategy {
-//        case .convertFromSnakeCase:
-//            // In this case we can attempt to recover the original value by reversing the transform
-//            let original = key.stringValue
-//            let converted = JSONEncoder.KeyEncodingStrategy._convertToSnakeCase(original)
-//            if converted == original {
-//                return "\(key) (\"\(original)\")"
-//            } else {
-//                return "\(key) (\"\(original)\"), converted to \(converted)"
-//            }
-//        default:
-            // Otherwise, just report the converted string
-            return "\(key) (\"\(key.stringValue)\")"
-//        }
-    }
-    
     public func decodeNil(forKey key: Key) throws -> Bool {
         guard let entry = self.container[key.stringValue] else {
             throw DecodingError.Keyed.keyNotFound(key, codingPath: decoder.codingPath)
@@ -99,10 +82,10 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
                 throw DecodingError.Keyed.valueNotFound(type, codingPath: decoder.codingPath)
             case .useDefaultValue:
                 return Bool.defaultValue
-            case .custom(let adaptor):
+            case .custom(let adapter):
                 decoder.storage.push(container: entry)
                 defer { decoder.storage.popContainer() }
-                return try adaptor.decodeBool(decoder)
+                return try adapter.adapt(decoder)
             }
         }
         
@@ -128,10 +111,10 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
                 throw DecodingError.Keyed.valueNotFound(type, codingPath: decoder.codingPath)
             case .useDefaultValue:
                 return Int.defaultValue
-            case .custom(let adaptor):
+            case .custom(let adapter):
                 decoder.storage.push(container: entry)
                 defer { decoder.storage.popContainer() }
-                return try adaptor.decodeInt(decoder)
+                return try adapter.adapt(decoder)
             }
         }
         
@@ -217,10 +200,10 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
                 throw DecodingError.Keyed.valueNotFound(type, codingPath: decoder.codingPath)
             case .useDefaultValue:
                 return UInt.defaultValue
-            case .custom(let adaptor):
+            case .custom(let adapter):
                 decoder.storage.push(container: entry)
                 defer { decoder.storage.popContainer() }
-                return try adaptor.decodeUInt(decoder)
+                return try adapter.adapt(decoder)
             }
         }
         
@@ -306,10 +289,10 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
                 throw DecodingError.Keyed.valueNotFound(type, codingPath: decoder.codingPath)
             case .useDefaultValue:
                 return Float.defaultValue
-            case .custom(let adaptor):
+            case .custom(let adapter):
                 decoder.storage.push(container: entry)
                 defer { decoder.storage.popContainer() }
-                return try adaptor.decodeFloat(decoder)
+                return try adapter.adapt(decoder)
             }
         }
         
@@ -335,10 +318,10 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
                 throw DecodingError.Keyed.valueNotFound(type, codingPath: decoder.codingPath)
             case .useDefaultValue:
                 return Double.defaultValue
-            case .custom(let adaptor):
+            case .custom(let adapter):
                 decoder.storage.push(container: entry)
                 defer { decoder.storage.popContainer() }
-                return try adaptor.decodeDouble(decoder)
+                return try adapter.adapt(decoder)
             }
         }
         
@@ -364,10 +347,10 @@ struct _CleanJSONKeyedDecodingContainer<K : CodingKey>: KeyedDecodingContainerPr
                 throw DecodingError.Keyed.valueNotFound(type, codingPath: decoder.codingPath)
             case .useDefaultValue:
                 return String.defaultValue
-            case .custom(let adaptor):
+            case .custom(let adapter):
                 decoder.storage.push(container: entry)
                 defer { decoder.storage.popContainer() }
-                return try adaptor.decodeString(decoder)
+                return try adapter.adapt(decoder)
             }
         }
         

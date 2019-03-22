@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-JSONParsePerformance/Pods-JSONParsePerformance-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CleanJSON/CleanJSON.framework
+${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework
