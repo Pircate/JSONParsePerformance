@@ -143,8 +143,12 @@ class JSONParsePerformanceTests: XCTestCase {
     func testObjectMapper() {
         measure {
             let json = String(data: data, encoding: .utf8)!
-            let objects = try! Mapper<Object>().mapArray(JSONString: json)
-            XCTAssertEqual(objects.count, count)
+            do {
+                let objects = try Mapper<Object>().mapArray(JSONString: json)
+                XCTAssertEqual(objects.count, count)
+            } catch {
+                XCTAssertNil(error)
+            }
         }
     }
     
@@ -159,16 +163,24 @@ class JSONParsePerformanceTests: XCTestCase {
     func testCleanJSON() {
         measure {
             let decoder = CleanJSONDecoder()
-            let objects = try! decoder.decode([Airport].self, from: data)
-            XCTAssertEqual(objects.count, count)
+            do {
+                let objects = try decoder.decode([Airport].self, from: data)
+                XCTAssertEqual(objects.count, count)
+            } catch {
+                XCTAssertNil(error)
+            }
         }
     }
     
     func testJSONSerialization() {
         measure {
-            let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-            let objects = json.map(Airport.init)
-            XCTAssertEqual(objects.count, count)
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+                let objects = json.map(Airport.init)
+                XCTAssertEqual(objects.count, count)
+            } catch {
+                XCTAssertNil(error)
+            }
         }
     }
 }
