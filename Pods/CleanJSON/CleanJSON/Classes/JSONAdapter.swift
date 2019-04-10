@@ -12,13 +12,33 @@ public protocol JSONAdapter {
     
     func adapt(_ decoder: CleanDecoder) throws -> Int
     
+    func adapt(_ decoder: CleanDecoder) throws -> Int8
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Int16
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Int32
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Int64
+    
     func adapt(_ decoder: CleanDecoder) throws -> UInt
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt8
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt16
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt32
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt64
     
     func adapt(_ decoder: CleanDecoder) throws -> Float
     
     func adapt(_ decoder: CleanDecoder) throws -> Double
     
     func adapt(_ decoder: CleanDecoder) throws -> String
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Date
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Decimal
 }
 
 public extension JSONAdapter {
@@ -28,7 +48,7 @@ public extension JSONAdapter {
     }
     
     func adapt(_ decoder: CleanDecoder) throws -> Int {
-        guard !decoder.decodeNull() else { return Int.defaultValue }
+        guard !decoder.decodeNil() else { return Int.defaultValue }
         
         guard let stringValue = try decoder.decodeIfPresent(String.self) else {
             return Int.defaultValue
@@ -37,8 +57,24 @@ public extension JSONAdapter {
         return Int(stringValue) ?? Int.defaultValue
     }
     
+    func adapt(_ decoder: CleanDecoder) throws -> Int8 {
+        return Int8.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Int16 {
+        return Int16.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Int32 {
+        return Int32.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Int64 {
+        return Int64.defaultValue
+    }
+    
     func adapt(_ decoder: CleanDecoder) throws -> UInt {
-        guard !decoder.decodeNull() else { return UInt.defaultValue }
+        guard !decoder.decodeNil() else { return UInt.defaultValue }
         
         guard let stringValue = try decoder.decodeIfPresent(String.self) else {
             return UInt.defaultValue
@@ -47,8 +83,24 @@ public extension JSONAdapter {
         return UInt(stringValue) ?? UInt.defaultValue
     }
     
+    func adapt(_ decoder: CleanDecoder) throws -> UInt8 {
+        return UInt8.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt16 {
+        return UInt16.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt32 {
+        return UInt32.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> UInt64 {
+        return UInt64.defaultValue
+    }
+    
     func adapt(_ decoder: CleanDecoder) throws -> Float {
-        guard !decoder.decodeNull() else { return Float.defaultValue }
+        guard !decoder.decodeNil() else { return Float.defaultValue }
         
         guard let stringValue = try decoder.decodeIfPresent(String.self) else {
             return Float.defaultValue
@@ -58,7 +110,7 @@ public extension JSONAdapter {
     }
     
     func adapt(_ decoder: CleanDecoder) throws -> Double {
-        guard !decoder.decodeNull() else { return Double.defaultValue }
+        guard !decoder.decodeNil() else { return Double.defaultValue }
         
         guard let stringValue = try decoder.decodeIfPresent(String.self) else {
             return Double.defaultValue
@@ -68,7 +120,7 @@ public extension JSONAdapter {
     }
     
     func adapt(_ decoder: CleanDecoder) throws -> String {
-        guard !decoder.decodeNull() else { return String.defaultValue }
+        guard !decoder.decodeNil() else { return String.defaultValue }
         
         if let intValue = try decoder.decodeIfPresent(Int.self) {
             return String(intValue)
@@ -79,6 +131,14 @@ public extension JSONAdapter {
         }
         
         return String.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Date {
+        return Date.defaultValue
+    }
+    
+    func adapt(_ decoder: CleanDecoder) throws -> Decimal {
+        return Decimal.defaultValue
     }
 }
 

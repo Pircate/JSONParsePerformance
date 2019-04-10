@@ -8,9 +8,11 @@
 
 import XCTest
 @testable import JSONParsePerformance
+import ObjectMapper
 import HandyJSON
 import CleanJSON
 
+// CleanJSON
 struct Airport: Codable {
     let name: String
     let iata: String
@@ -25,6 +27,7 @@ struct Airport: Codable {
     let runways: [Runway]
 }
 
+// JSONSerialization
 extension Airport {
     public init(json: [String: Any]) {
         guard let name = json["name"] as? String,
@@ -40,7 +43,7 @@ extension Airport {
         self.iata = iata
         self.icao = icao
         self.coordinates = coordinates
-        self.runways = runways.map { Runway(json: $0) }
+        self.runways = runways.map(Runway.init)
     }
 }
 
@@ -57,6 +60,7 @@ extension Airport.Runway {
     }
 }
 
+// HandyJSON
 struct Handy: HandyJSON {
     
     var name: String?
@@ -71,6 +75,47 @@ struct Handy: HandyJSON {
     }
 }
 
+// ObjectMapper
+struct Object: ImmutableMappable {
+    
+    var name: String
+    var iata: String
+    var icao: String
+    var coordinates: [Double]
+    var runways: [Runway]
+    
+    init(map: Map) throws {
+        name = try map.value("name")
+        iata = try map.value("iata")
+        icao = try map.value("icao")
+        coordinates = try map.value("coordinates")
+        runways = try map.value("runways")
+    }
+    
+    mutating func mapping(map: Map) {
+        name <- map["name"]
+        iata <- map["iata"]
+        icao <- map["icao"]
+        coordinates <- map["coordinates"]
+        runways <- map["runways"]
+    }
+    
+    struct Runway: ImmutableMappable {
+        var direction: String
+        var distance: Int
+        
+        init(map: Map) throws {
+            direction = try map.value("direction")
+            distance = try map.value("distance")
+        }
+        
+        mutating func mapping(map: Map) {
+            direction <- map["direction"]
+            distance <- map["distance"]
+        }
+    }
+}
+
 func airportsJSON(count: Int) -> Data {
     let resource = "airports\(count)"
     guard let url = Bundle.main.url(forResource: resource, withExtension: "json"),
@@ -80,7 +125,8 @@ func airportsJSON(count: Int) -> Data {
     return data
 }
 
-let data = airportsJSON(count: 1000) // or 1, 10, 100, 1000, 10000
+let count = 1000 // or 1, 10, 100, 1000, 10000
+let data = airportsJSON(count: count)
 
 class JSONParsePerformanceTests: XCTestCase {
     
@@ -94,24 +140,35 @@ class JSONParsePerformanceTests: XCTestCase {
         super.tearDown()
     }
     
-    func testHandyJSON() {
-        let json = String(data: data, encoding: .utf8)
+    func testObjectMapper() {
         measure {
-            _ = JSONDeserializer<Handy>.deserializeModelArrayFrom(json: json)
+            let json = String(data: data, encoding: .utf8)!
+            let objects = try! Mapper<Object>().mapArray(JSONString: json)
+            XCTAssertEqual(objects.count, count)
+        }
+    }
+    
+    func testHandyJSON() {
+        measure {
+            let json = String(data: data, encoding: .utf8)
+            let objects = JSONDeserializer<Handy>.deserializeModelArrayFrom(json: json)
+            XCTAssertEqual(objects?.count, count)
         }
     }
     
     func testCleanJSON() {
         measure {
             let decoder = CleanJSONDecoder()
-            _ = try! decoder.decode([Airport].self, from: data)
+            let objects = try! decoder.decode([Airport].self, from: data)
+            XCTAssertEqual(objects.count, count)
         }
     }
     
     func testJSONSerialization() {
         measure {
             let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-            _ = json.map{ Airport(json: $0) }
+            let objects = json.map(Airport.init)
+            XCTAssertEqual(objects.count, count)
         }
     }
 }

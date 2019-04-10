@@ -4,7 +4,8 @@ target 'JSONParsePerformance' do
 
   use_frameworks!
 
-  pod 'HandyJSON'
+  pod 'ObjectMapper'
+  pod 'HandyJSON', '5.0.0-beta.1'
   pod 'CleanJSON'
 
   target 'JSONParsePerformanceTests' do
