@@ -20,8 +20,13 @@ struct Airport: Codable {
     let coordinates: [Double]
     
     struct Runway: Codable {
+        enum Surface: String, Codable {
+            case rigid, flexible, gravel, sealed, unpaved, other
+        }
+        
         let direction: String
         let distance: Int
+        let surface: Surface
     }
     
     let runways: [Runway]
@@ -50,13 +55,16 @@ extension Airport {
 extension Airport.Runway {
     public init(json: [String: Any]) {
         guard let direction = json["direction"] as? String,
-            let distance = json["distance"] as? Int
+            let distance = json["distance"] as? Int,
+            let surfaceRawValue = json["surface"] as? String,
+            let surface = Surface(rawValue: surfaceRawValue)
             else {
                 fatalError("Cannot initialize Runway from JSON")
         }
         
         self.direction = direction
         self.distance = distance
+        self.surface = surface
     }
 }
 
@@ -70,8 +78,13 @@ struct Handy: HandyJSON {
     var runways: [Runway]?
     
     struct Runway: HandyJSON {
+        enum Surface: String, Codable {
+            case rigid, flexible, gravel, sealed, unpaved, other
+        }
+        
         var direction: String?
         var distance: Int?
+        var surface: Surface = .rigid
     }
 }
 
@@ -101,17 +114,24 @@ struct Object: ImmutableMappable {
     }
     
     struct Runway: ImmutableMappable {
+        enum Surface: String {
+            case rigid, flexible, gravel, sealed, unpaved, other
+        }
+        
         var direction: String
         var distance: Int
+        var surface: Surface
         
         init(map: Map) throws {
             direction = try map.value("direction")
             distance = try map.value("distance")
+            surface = try map.value("surface")
         }
         
         mutating func mapping(map: Map) {
             direction <- map["direction"]
             distance <- map["distance"]
+            surface <- map["surface"]
         }
     }
 }
