@@ -78,13 +78,13 @@ struct Handy: HandyJSON {
     var runways: [Runway]?
     
     struct Runway: HandyJSON {
-        enum Surface: String, Codable {
+        enum Surface: String, HandyJSONEnum {
             case rigid, flexible, gravel, sealed, unpaved, other
         }
         
         var direction: String?
         var distance: Int?
-        var surface: Surface = .rigid
+        var surface: Surface?
     }
 }
 
