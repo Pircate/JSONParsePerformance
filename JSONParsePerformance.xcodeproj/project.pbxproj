@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,8 @@
 		6C515642217A38DD00226975 /* airports10.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C51563D217A38DD00226975 /* airports10.json */; };
 		6C515643217A38DD00226975 /* airports100.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C51563E217A38DD00226975 /* airports100.json */; };
 		6C515644217A38DD00226975 /* airports1000.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C51563F217A38DD00226975 /* airports1000.json */; };
+		6C75F403229CFC0000FFE050 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C75F402229CFC0000FFE050 /* test.json */; };
+		6C75F404229CFC0000FFE050 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C75F402229CFC0000FFE050 /* test.json */; };
 		C001A9AF85B5D88478FBD23D /* Pods_JSONParsePerformance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CC0A592204574156C36711 /* Pods_JSONParsePerformance.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,7 @@
 		6C51563D217A38DD00226975 /* airports10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports10.json; sourceTree = "<group>"; };
 		6C51563E217A38DD00226975 /* airports100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports100.json; sourceTree = "<group>"; };
 		6C51563F217A38DD00226975 /* airports1000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports1000.json; sourceTree = "<group>"; };
+		6C75F402229CFC0000FFE050 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		7FFB31F2EB3D1C27E7A91793 /* Pods-JSONParsePerformanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformanceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformanceTests/Pods-JSONParsePerformanceTests.release.xcconfig"; sourceTree = "<group>"; };
 		9328CFCA03EEF888D693A8A3 /* Pods_JSONParsePerformanceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONParsePerformanceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7A496D6DCA3DE1D4168005 /* Pods-JSONParsePerformance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParsePerformance.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParsePerformance/Pods-JSONParsePerformance.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		33A1B992209B431E00312FB3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6C75F402229CFC0000FFE050 /* test.json */,
 				33A1B9F4209B439D00312FB3 /* airports1.json */,
 				33A1B9F2209B439D00312FB3 /* airports10.json */,
 				33A1B9F3209B439D00312FB3 /* airports100.json */,
@@ -273,6 +277,7 @@
 				33A1B9F6209B439D00312FB3 /* airports10.json in Resources */,
 				33A1B9F8209B439D00312FB3 /* airports1.json in Resources */,
 				33A1B9F9209B439D00312FB3 /* airports1000.json in Resources */,
+				6C75F403229CFC0000FFE050 /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +290,7 @@
 				6C515643217A38DD00226975 /* airports100.json in Resources */,
 				6C515640217A38DD00226975 /* airports1.json in Resources */,
 				6C515641217A38DD00226975 /* airports10000.json in Resources */,
+				6C75F404229CFC0000FFE050 /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

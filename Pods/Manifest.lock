@@ -1,7 +1,7 @@
 PODS:
-  - CleanJSON (0.8.2)
+  - CleanJSON (1.0.0)
   - HandyJSON (5.0.0-beta.1)
-  - ObjectMapper (3.4.2)
+  - ObjectMapper (3.5.1)
 
 DEPENDENCIES:
   - CleanJSON
@@ -15,10 +15,10 @@ SPEC REPOS:
     - ObjectMapper
 
 SPEC CHECKSUMS:
-  CleanJSON: f7be273cc133747dfc638da4f2f9d552d05a4289
+  CleanJSON: 702dd619e1329c6399a579aa19af311acf47e461
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
-  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
 
 PODFILE CHECKSUM: 019f4d412d898a484bd2102913ed54a052054e75
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.5
